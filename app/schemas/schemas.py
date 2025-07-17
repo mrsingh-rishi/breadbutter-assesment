@@ -202,7 +202,7 @@ class GigResponse(GigBase):
     status: GigStatus
     created_at: datetime
     updated_at: datetime
-    client: ClientResponse
+    client: Optional[ClientResponse]
     required_skills: List[SkillResponse] = []
     
     class Config:
