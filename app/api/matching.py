@@ -140,9 +140,9 @@ def get_client_feedback(
 @router.post("/rematch/{gig_id}")
 def rematch_gig(
     gig_id: str,
+    background_tasks: BackgroundTasks,
     use_ai: bool = False,
     limit: int = 10,
-    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db)
 ):
     """Trigger a rematch for a gig in the background."""

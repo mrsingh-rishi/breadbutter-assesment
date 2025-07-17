@@ -128,7 +128,7 @@ class MatchmakingEngine:
             gap = required_min - talent.experience_years
             return max(0, 10 - gap * 2)
     
-    def calculate_availability_score(self, talent: Talent, gig: Gig) -> float:
+    def calculate_availability_score(self, talent: Talent) -> float:
         """Calculate availability score"""
         if talent.availability_status == 'available':
             return 10.0
@@ -188,7 +188,7 @@ class MatchmakingEngine:
             'budget': self.calculate_budget_score(talent, gig),
             'skills': self.calculate_skills_score(talent, gig),
             'experience': self.calculate_experience_score(talent, gig),
-            'availability': self.calculate_availability_score(talent, gig),
+            'availability': self.calculate_availability_score(talent),
             'portfolio': self.calculate_portfolio_score(talent, gig),
             'rating': self.calculate_rating_score(talent)
         }
